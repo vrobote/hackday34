@@ -8,9 +8,7 @@
 #define SPI_LED_MATRIX_H
 
 #include <inttypes.h>
-#include <LineDriver.h>
 #include <SPI.h>
-#include <SPI_Bus.h>
 
 #if defined(ARDUINO) && ARDUINO >= 100
   #include "Arduino.h"
@@ -53,7 +51,6 @@ public:
 
 private:
     int ss_pin;
-    //SPI_Bus &shreg_out;
 
     uint8_t buf[8];
     uint8_t buf2[8];

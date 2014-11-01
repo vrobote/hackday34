@@ -6,11 +6,6 @@
 
 #include "spi_led_matrix.h"
 
-//SPI_LedMatrix::SPI_LedMatrix(SPI_Bus &_shreg_out):
-//    shreg_out(_shreg_out)
-//{
-//}
-
 SPI_LedMatrix::SPI_LedMatrix(int _ss_pin):
     ss_pin(_ss_pin)
 {

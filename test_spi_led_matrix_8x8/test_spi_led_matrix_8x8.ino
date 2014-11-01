@@ -1,7 +1,10 @@
-#include <LineDriver.h>
-#include <SPI.h>
-#include <SPI_Bus.h>
+//
+// test LED matrix 8x8 over SPI
+//
+// http://robocraft.ru
+//
 
+#include <SPI.h>
 #include "spi_led_matrix.h"
 
 //
@@ -57,8 +60,7 @@ uint8_t openIndex[] = { 3, 2, 1 }; // Open bitmap sequence
 
 
 // выходной каскад из двух сдвиговых регистров 74HC595
-//SPI_Bus shreg_out(_16bit, 10, MSBFIRST);
-//SPI_LedMatrix eyes(shreg_out);
+// SS на 10 pin
 SPI_LedMatrix eyes(10);
 
 void setup()
