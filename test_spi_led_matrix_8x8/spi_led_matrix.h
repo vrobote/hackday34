@@ -33,12 +33,10 @@ enum {
 class SPI_LedMatrix
 {
 public:
-    //SPI_LedMatrix(SPI_Bus &shreg_out);
     SPI_LedMatrix(int ss_pin);
     ~SPI_LedMatrix();
 
     void clear(int mat_id);
-    void clear_lines(int mat_id);
     void drawPixel(int mat_id, int x, int y, int val);
     void drawRect(int mat_id, int x_top, int y_top, int x_bottom, int y_bottom, int val);
 

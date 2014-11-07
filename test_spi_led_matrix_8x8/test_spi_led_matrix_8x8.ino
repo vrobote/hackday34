@@ -60,8 +60,8 @@ uint8_t openIndex[] = { 3, 2, 1 }; // Open bitmap sequence
 
 
 // выходной каскад из двух сдвиговых регистров 74HC595
-// SS на 10 pin
-SPI_LedMatrix eyes(10);
+// SS на 53 pin
+SPI_LedMatrix eyes(53);
 
 void setup()
 {
@@ -200,6 +200,11 @@ void loop()
             close_eye = EYE_BOTH;
         }
     }
+
+    if(eyeX < 0) eyeX=0;
+    if(eyeY < 0) eyeY=0;
+    if(eyeX > 6) eyeX=6;
+    if(eyeY > 6) eyeY=6;
 
 //    switch(state) {
 //    case ST_UP:

@@ -33,23 +33,11 @@ void SPI_LedMatrix::clear(int mat_id)
             buf[i] = 0;
             buf2[i] = 0;
         }
-        //shreg_out.lineWrite(mat_id*LEDS_MATRIX_SIZE + i, LOW);
-        //shreg_out.lineWrite(mat_id*LEDS_MATRIX_SIZE + LEDS_MATRIX_L + i, LOW);
-    }
-}
-
-void SPI_LedMatrix::clear_lines(int mat_id)
-{
-    for(int y=0; y<LEDS_MATRIX_L; y++) {
-        //shreg_out.lineWrite(mat_id*LEDS_MATRIX_SIZE + LEDS_MATRIX_L + y, LOW);
     }
 }
 
 void SPI_LedMatrix::drawPixel(int mat_id, int x, int y, int val)
 {
-#if 1
-    //digitalWrite(ss_pin, LOW);
-
     if ((y < 0) || (y >= 8)) return;
     if ((x < 0) || (x >= 16)) return;
 
@@ -76,16 +64,6 @@ void SPI_LedMatrix::drawPixel(int mat_id, int x, int y, int val)
             buf2[y] &= ~(1 << x);
         }
     }
-
-    //SPI.transfer(v1);
-    //SPI.transfer(v2);
-    //SPI.transfer(B1000000);
-    //SPI.transfer(B1000000);
-    //digitalWrite(ss_pin, HIGH);
-#endif
-
-    //shreg_out.lineWrite(mat_id*LEDS_MATRIX_SIZE + x, val);
-    //shreg_out.lineWrite(mat_id*LEDS_MATRIX_SIZE + LEDS_MATRIX_L + y, HIGH);
 }
 
 void SPI_LedMatrix::drawRect(int mat_id, int x_top, int y_top, int x_bottom, int y_bottom, int val)
